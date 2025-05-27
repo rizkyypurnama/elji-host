@@ -225,6 +225,10 @@ h1 {
     color: #FF4500;
     text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
 }
+.fa-whatsapp {
+    color: #22d128;
+    text-shadow: 0 0 10px rgba(48, 207, 54, 0.5);
+}
 
 @media (max-width: 480px) {
     .container {
@@ -408,7 +412,6 @@ h1 {
     display: block;
 }
 
-
-.bold {
-    text
+.center {
+    text-align: center;
 }
