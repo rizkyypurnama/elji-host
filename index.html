@@ -21,7 +21,7 @@
                 <div class="tag-text"><span>&lt;</span>IT Programmer<span>.</span>&gt;</div>
                 <div class="tag-text"><span>&lt;</span>Digital Creator<span>.</span>&gt;</div>
                 <div class="tag-text"><span>&lt;</span>Enterpreneur <span>.</span>&gt;</div>
-                <div id="start-btn" class="start-button tag-text">Tap to Start</div>
+                <div id="start-btn" class="start-button tag-text">Tap here to Start</div>
             </div>
 
         </div>
@@ -200,8 +200,16 @@ window.addEventListener('load', function () {
         container1.style.display = 'block';
     });
 });
+  setTimeout(() => {
+    const loader = document.querySelector('.loader');
+    if (loader) {
+      loader.classList.add('fade-out');
 
-
+      // Setelah transisi selesai (0.5s), sembunyikan dari DOM
+      setTimeout(() => {
+      }, 500);
+    }
+  }, 2500); // tunggu 2.5 detik sebelum mulai fade out
     </script>
 
 </body>
