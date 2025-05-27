@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+        <audio id="bg-music" src="song.mp3" autoplay loop></audio>
+
     <canvas id="bg-canvas"></canvas>
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
@@ -19,7 +21,9 @@
                 <div class="tag-text"><span>&lt;</span>IT Programmer<span>.</span>&gt;</div>
                 <div class="tag-text"><span>&lt;</span>Digital Creator<span>.</span>&gt;</div>
                 <div class="tag-text"><span>&lt;</span>Enterpreneur <span>.</span>&gt;</div>
+                <div id="start-btn" class="start-button tag-text">Tap to Start</div>
             </div>
+
         </div>
     </div>
     <div class="container" id="content" style="display: none;">
@@ -153,50 +157,52 @@
         }
 
         // Loading screen with minimum display time
-        window.addEventListener('load', function() {
-            // Force the loading screen to show for at least 3 seconds
-            setTimeout(() => {
-                const loadingScreen = document.getElementById('loading-screen');
-                const content = document.getElementById('content');
-                if (loadingScreen) {
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500); // Fade out transition
-                }
-                if (content) content.style.display = 'block';
-            }, 3000); // Show loader for 3 seconds
-        });
+        // window.addEventListener('load', function() {
+        //     // Force the loading screen to show for at least 3 seconds
+        //     setTimeout(() => {
+        //         const loadingScreen = document.getElementById('loading-screen');
+        //         const content = document.getElementById('content');
+        //         if (loadingScreen) {
+        //             loadingScreen.style.opacity = '0';
+        //             setTimeout(() => {
+        //                 loadingScreen.style.display = 'none';
+        //             }, 500); // Fade out transition
+        //         }
+        //         if (content) content.style.display = 'block';
+        //     }, 3000); // Show loader for 3 seconds
+        // });
 
 window.addEventListener('load', function () {
-    // Tampilkan loading screen minimal 3 detik
-    setTimeout(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        const container1 = document.getElementById('content');
-        const container2 = document.getElementById('content-2');
+    const startBtn = document.getElementById('start-btn');
+    const bgMusic = document.getElementById('bg-music');
+    const loadingScreen = document.getElementById('loading-screen');
+    const container1 = document.getElementById('content');
+    const container2 = document.getElementById('content-2');
 
-        if (loadingScreen) {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-                if (container1) container1.style.display = 'block';  // tampilkan container1
-                if (container2) container2.style.display = 'none';    // sembunyikan container2
-            }, 500);
-        }
+    startBtn.addEventListener('click', () => {
+        bgMusic.play().catch(console.warn);
 
-        // Tombol navigasi
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            if (container1) container1.style.display = 'none';
-            if (container2) container2.style.display = 'block';
-        });
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            container1.style.display = 'block';
+        }, 500);
+    });
 
-        document.getElementById('backBtn').addEventListener('click', () => {
-            if (container2) container2.style.display = 'none';
-            if (container1) container1.style.display = 'block';
-        });
-    }, 3000);
+    // Navigasi antar halaman
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        container1.style.display = 'none';
+        container2.style.display = 'block';
+    });
+
+    document.getElementById('backBtn').addEventListener('click', () => {
+        container2.style.display = 'none';
+        container1.style.display = 'block';
+    });
 });
 
+
     </script>
+
 </body>
 </html> 
