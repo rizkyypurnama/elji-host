@@ -50,6 +50,16 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: profileCardEntry 1s ease-out;
 }
+.profile-card-2 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
 
 @keyframes profileCardEntry {
     from {
@@ -102,9 +112,11 @@ h1 {
     font-size: 2em;
     margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
 }
 
 .bio {
+    text-align: center;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
 }
@@ -204,19 +216,12 @@ h1 {
     color: #1877F2; 
     text-shadow: 0 0 10px rgba(24, 119, 242, 0.5);
 }
-.fa-linkedin { 
-    color: #0077B5; 
-    text-shadow: 0 0 10px rgba(0, 119, 181, 0.5);
+.fa-tiktok { 
+    color: #01070a; 
+    text-shadow: 0 0 10px rgba(32, 39, 42, 0.5);
 }
-.fa-github { 
-    color: #fff; 
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-.fa-code { 
-    color: #FFA116; 
-    text-shadow: 0 0 10px rgba(255, 161, 22, 0.5);
-}
-.fa-reddit {
+
+.fa-youtube {
     color: #FF4500;
     text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
 }
@@ -360,3 +365,50 @@ h1 {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 } 
+
+.nav-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ffffff10;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-button:hover {
+    background-color: #ffffff30;
+    transform: scale(1.05);
+}
+
+.container-1, .container-2 {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100px);
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+.bold {
+    text
+}
